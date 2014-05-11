@@ -1,6 +1,0 @@
-            		 <div class="sign_up">				  	
-					 <form>
-					  		<input type="text" value="E-mail address " onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'E-mail address';}"> 
-					 		<input type="submit" value="Sign Up">
-					  </form>
-				    </div>
