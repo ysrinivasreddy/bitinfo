@@ -1,0 +1,177 @@
+@import "compass/css3";
+
+a{font-family: arial, helvetica; text-decoration: none;}
+a.btn, .btn
+{
+    font-size: 1.0em;
+    display: inline-block;
+    margin: 5px 0 5px 0;
+    padding: 5px 10px 5px 10px;
+    color: #fff;
+    cursor: pointer;
+
+  /*background: -webkit-linear-gradient(#002B63, #07294d);
+  background: -moz-linear-gradient(#002B63, #07294d);
+  background: -o-linear-gradient(#002B63, #07294d);
+  background: linear-gradient(#002B63, #07294d);*/
+    background-color: #7CFC00;
+}
+a:hover.btn 
+{
+    /*background: linear-gradient(#106699, #006699);
+    background: -webkit-linear-gradient(#106699, #006699);
+background: -moz-linear-gradient(#106699, #006699);
+  background: -o-linear-gradient(#106699, #006699);*/
+    background-color: #FF8C00;
+}
+ a:active.btn
+{
+     /*background: linear-gradient(#7cace4, #6cace4);
+    background: -webkit-linear-gradient(#7cace4, #6cace4);
+  background: -moz-linear-gradient(#7cace4, #6cace4);
+  background: -o-linear-gradient(#7cace4, #6cace4);*/
+     background-color: #7cace4;
+}
+.rating {
+  height: 36px;
+}
+
+.profile-rating .star {
+  float: left;
+  width: 36px;
+  height: 36px;
+  border-radius: 100%;
+  background-color: green;
+  margin-left: 2px;
+}
+
+
+.rating[data-rating='1'] .star[data-selection~='1'] {
+    background-color: red;
+}
+
+.rating[data-rating='2'] .star[data-selection~='2'] {
+    background-color: red;
+}
+
+.rating[data-rating='3'] .star[data-selection~='3'] {
+    background-color: red;
+}
+
+.rating[data-rating='4'] .star[data-selection~='4'] {
+    background-color: red;
+}
+
+.rating[data-rating='5'] .star[data-selection~='5'] {
+    background-color: red;
+}
+
+.rating.profile-rating:hover .star {
+    background-color: red;
+}
+
+.rating.profile-rating:hover .star:hover ~ .star {
+    background-color: green;
+}
+// More practical CSS...
+// using mobile first method (IE8,7 requires respond.js polyfill https://github.com/scottjehl/Respond)
+
+$breakpoint-alpha: 480px; // adjust to your needs
+
+.rwd-table {
+  margin: 1em 0;
+  min-width: 300px; // adjust to your needs
+  
+  tr {
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  th {
+    display: none; // for accessibility, use a visually hidden method here instead! Thanks, reddit!   
+  }
+  
+  td {
+    display: block; 
+    
+    &:first-child {
+      padding-top: .5em;
+    }
+    &:last-child {
+      padding-bottom: .5em;
+    }
+
+    &:before {
+      content: attr(data-th)": "; // who knew you could do this? The internet, that's who.
+      font-weight: bold;
+
+      // optional stuff to make it look nicer
+      width: 6.5em; // magic number :( adjust according to your own content
+      display: inline-block;
+      // end options
+      
+      @media (min-width: $breakpoint-alpha) {
+        display: none;
+      }
+    }
+  }
+  
+  th, td {
+    text-align: left;
+    
+    @media (min-width: $breakpoint-alpha) {
+      display: table-cell;
+      padding: .25em .5em;
+      
+      &:first-child {
+        padding-left: 0;
+      }
+      
+      &:last-child {
+        padding-right: 0;
+      }
+    }
+
+  }
+  
+  
+}
+
+
+// presentational styling
+
+@import 'http://fonts.googleapis.com/css?family=Montserrat:300,400,700';
+
+body {
+  padding: 0 2em;
+  font-family: Montserrat, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  color: #444;
+  background: #eee;
+}
+
+h1 {
+  font-weight: normal;
+  letter-spacing: -1px;
+  color: #34495E;
+}
+
+.rwd-table {
+  background: #34495E;
+  color: #fff;
+  border-radius: .4em;
+  overflow: hidden;
+  tr {
+    border-color: lighten(#34495E, 10%);
+  }
+  th, td {
+    margin: .5em 1em;
+    @media (min-width: $breakpoint-alpha) { 
+      padding: 1em !important; 
+    }
+  }
+  th, td:before {
+    color: #dd5;
+  }
+}
